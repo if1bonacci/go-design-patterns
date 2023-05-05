@@ -7,6 +7,7 @@ import (
 	"github.com/if1bonacci/go-design-patterns/internal/services/decorator"
 	"github.com/if1bonacci/go-design-patterns/internal/services/dependencyinjection"
 	"github.com/if1bonacci/go-design-patterns/internal/services/factorymethod"
+	"github.com/if1bonacci/go-design-patterns/internal/services/singleton"
 )
 
 func main() {
@@ -42,4 +43,8 @@ func main() {
 	order := &chainofresponsibility.Order{Id: "abc"}
 	payment.Execute(order)
 
+	//singleton
+	singleton.GetInstance()
+	singleton.GetInstance()
+	singleton.GetInstance()
 }
