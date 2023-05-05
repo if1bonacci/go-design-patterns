@@ -5,6 +5,7 @@ import (
 
 	"github.com/if1bonacci/go-design-patterns/internal/services/decorator"
 	"github.com/if1bonacci/go-design-patterns/internal/services/dependencyinjection"
+	"github.com/if1bonacci/go-design-patterns/internal/services/factorymethod"
 )
 
 func main() {
@@ -21,4 +22,12 @@ func main() {
 	pizza := dependencyinjection.NewPizza(cheeze)
 
 	fmt.Println(pizza.GetCheeze())
+
+	//factory
+	barsa, _ := factorymethod.GetTeam("barsa")
+	kalmar, _ := factorymethod.GetTeam("kalmar")
+
+	fmt.Printf("Team: %s", barsa.GetName())
+	fmt.Println()
+	fmt.Printf("Team: %s", kalmar.GetName())
 }
